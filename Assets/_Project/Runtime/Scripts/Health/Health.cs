@@ -14,6 +14,8 @@ namespace _Project.Runtime.Scripts.Health
         //Actions
 
         public event UnityAction<int> OnCurrentHealthChanged;
+        public event UnityAction OnDamageTaken;
+        public event UnityAction OnDeath;
         
         //UnityEvents
         [Header("Events"), Space(5)]
@@ -42,6 +44,9 @@ namespace _Project.Runtime.Scripts.Health
         private void Awake()
         {
             CurrentHealth = MaxHealth;
+            
+            OnDamageTakenEvent.AddListener(() => OnDamageTaken?.Invoke());
+            OnDeathEvent.AddListener(() => OnDeath?.Invoke());
         }
 
         public void TakeDamage(int damage)
@@ -58,7 +63,7 @@ namespace _Project.Runtime.Scripts.Health
             }
         }
 
-        public void Die()
+        private void Die()
         {
             OnDeathEvent?.Invoke();
         }

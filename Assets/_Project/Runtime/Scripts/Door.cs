@@ -1,18 +1,20 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using _Project.Runtime.Interfaces;
 using UnityEngine;
 
 namespace _Project.Runtime.Scripts
 {
     public class Door : MonoBehaviour
     {
-        public List<Switch> Switches;
+        [SerializeField] private List<SignalEmitter> SignalEmitters;
 
         private void OnEnable()
         {
-            foreach (Switch aSwitch in Switches)
+            foreach (SignalEmitter emitter in SignalEmitters)
             {
-                aSwitch.OnStateChanged += ReceiveSignal;
+                emitter.OnStateChanged += ReceiveSignal;
             }
         }
 
@@ -40,21 +42,21 @@ namespace _Project.Runtime.Scripts
 
         private void OnDisable()
         {
-            foreach (Switch aSwitch in Switches)
+            foreach (SignalEmitter emitter in SignalEmitters)
             {
-                aSwitch.OnStateChanged -= ReceiveSignal;
+                emitter.OnStateChanged += ReceiveSignal;
             }
         }
 
         private void OnDrawGizmosSelected()
         {
-            if(Switches.Count <= 0 || Switches == null) return;
+            if(SignalEmitters.Count <= 0 || SignalEmitters == null) return;
 
             Gizmos.color = Color.green;
             
-            foreach (Switch aSwitch in Switches.Where(aSwitch => aSwitch != null))
+            foreach (SignalEmitter emitter in SignalEmitters.Where(emitter => emitter != null))
             {
-                Gizmos.DrawLine(transform.position, aSwitch.transform.position);
+                Gizmos.DrawLine(transform.position, emitter.transform.position);
             }
         }
     }

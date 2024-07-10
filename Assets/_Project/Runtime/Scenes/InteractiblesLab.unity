@@ -478,6 +478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SignalEmitters:
   - {fileID: 1866195366}
+  - {fileID: 328753542}
 --- !u!1 &1866195363
 GameObject:
   m_ObjectHideFlags: 0

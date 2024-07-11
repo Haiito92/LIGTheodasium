@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace _Project.Runtime.Scripts
+namespace _Project.Runtime.Scripts.SignalEmitters
 {
     public abstract class SignalEmitter : MonoBehaviour
     {

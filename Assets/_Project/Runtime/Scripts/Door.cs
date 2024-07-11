@@ -1,7 +1,6 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using _Project.Runtime.Interfaces;
+using _Project.Runtime.Scripts.SignalEmitters;
 using UnityEngine;
 
 namespace _Project.Runtime.Scripts
@@ -10,8 +9,13 @@ namespace _Project.Runtime.Scripts
     {
         [SerializeField] private List<SignalEmitter> SignalEmitters;
 
+        //Field for testing, meant to be removed after;
+        [SerializeField] private SpriteRenderer _sp;
+        
         private void OnEnable()
         {
+            _sp.color = Color.red; //For testing purposes only, should be removed after
+            
             foreach (SignalEmitter emitter in SignalEmitters)
             {
                 emitter.OnStateChanged += ReceiveSignal;
@@ -33,11 +37,13 @@ namespace _Project.Runtime.Scripts
         private void Open()
         {
             Debug.Log("OpenDoor");
+            _sp.color = Color.green;//For testing purposes only, should be removed after
         }
 
         private void Close()
         {
             Debug.Log("CloseDoor");
+            _sp.color = Color.red;//For testing purposes only, should be removed after
         }
 
         private void OnDisable()

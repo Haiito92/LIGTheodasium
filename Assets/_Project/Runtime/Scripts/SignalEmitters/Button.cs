@@ -1,10 +1,8 @@
-using System;
 using _Project.Runtime.Interfaces;
 using NaughtyAttributes;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace _Project.Runtime.Scripts
+namespace _Project.Runtime.Scripts.SignalEmitters
 {
     public class Button : SignalEmitter, IInteractable
     {

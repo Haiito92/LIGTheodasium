@@ -2,7 +2,7 @@ using _Project.Runtime.Interfaces;
 using NaughtyAttributes;
 using UnityEngine;
 
-namespace _Project.Runtime.Scripts
+namespace _Project.Runtime.Scripts.SignalEmitters
 {
     public class Switch : SignalEmitter, IInteractable
     {

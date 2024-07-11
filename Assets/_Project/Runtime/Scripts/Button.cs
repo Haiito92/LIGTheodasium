@@ -1,16 +1,54 @@
+using System;
 using _Project.Runtime.Interfaces;
+using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _Project.Runtime.Scripts
 {
     public class Button : SignalEmitter, IInteractable
     {
-        [SerializeField] private float _releaseTime = 1f;
+        [SerializeField] private float _timeToRelease = 1f;
+        private float _releaseTimer;
+        private float _elapsedTime;
 
-        public void Interact()
+        private void Update()
         {
-            EmitSignal();
+            if (_isOn)
+            {
+                _releaseTimer += Time.deltaTime;
+
+                if (_releaseTimer >= _timeToRelease)
+                {
+                    ReleaseButton();
+                }
+            }
         }
 
+        [Button]
+        public void Interact()
+        {
+            PushButton();
+        }
+
+        private void PushButton()
+        {
+            _isOn = true;
+
+            _releaseTimer = 0;
+            
+            EmitSignal(_isOn);
+            
+            Debug.Log("Push Button");
+        }
+
+        private void ReleaseButton()
+        {
+            _isOn = false;
+            
+            EmitSignal(_isOn);
+            
+            Debug.Log("Release Button");
+        }
     }
 }

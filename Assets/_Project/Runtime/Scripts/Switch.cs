@@ -13,7 +13,7 @@ namespace _Project.Runtime.Scripts
             
             Debug.Log("State: " + _isOn);
             
-            EmitSignal();
+            EmitSignal(_isOn);
         }
     }
 }

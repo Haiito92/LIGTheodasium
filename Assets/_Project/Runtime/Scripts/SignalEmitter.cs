@@ -9,9 +9,9 @@ namespace _Project.Runtime.Scripts
         
         public event UnityAction<bool> OnStateChanged;
         
-        protected virtual void EmitSignal()
+        protected virtual void EmitSignal(bool signalValue)
         {
-            OnStateChanged?.Invoke(_isOn);
+            OnStateChanged?.Invoke(signalValue);
         }
     }
 }

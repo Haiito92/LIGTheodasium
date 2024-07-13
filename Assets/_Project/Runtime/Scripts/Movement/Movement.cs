@@ -10,11 +10,11 @@ public class Movement : MonoBehaviour
     [SerializeField] private bool _isPlayer;
 
     //IS PLAYER VARIABLES
-    [HideInInspector] private InputActionReference _movementInput;
+    [SerializeField] private InputActionReference _movementInput;
 
     //IS AI VARIABLES
     //patrol
-    [HideInInspector] private Transform[] _waypoints;
+    [SerializeField] private Transform[] _waypoints;
     private Transform _target;
     private int _destPoint;
 

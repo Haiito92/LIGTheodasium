@@ -520,6 +520,9 @@ MonoBehaviour:
   OnDamageTakenEvent:
     m_PersistentCalls:
       m_Calls: []
+  OnHealedEvent:
+    m_PersistentCalls:
+      m_Calls: []
   OnDeathEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -671,6 +674,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 1
   _explosionRadius: 1.91
+  _timeBeforeExplosion: 2
+  OnActivationEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExplosionEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &2024798692
 SpriteRenderer:
   m_ObjectHideFlags: 0

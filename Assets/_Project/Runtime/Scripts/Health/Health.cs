@@ -42,7 +42,7 @@ namespace _Project.Runtime.Scripts.Health
 
         }
 
-        private bool IsAlive => _currentHealth <= 0;
+        private bool IsAlive => _currentHealth > 0;
         #endregion
         
         private void Awake()

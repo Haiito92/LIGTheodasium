@@ -13,5 +13,12 @@ namespace _Project.Runtime.Scripts.Health
             
             _health.TakeDamage(damage);
         }
+
+        public void Heal(int heal)
+        {
+            if(_health == null) return;
+            
+            _health.Heal(heal);
+        }
     }
 }

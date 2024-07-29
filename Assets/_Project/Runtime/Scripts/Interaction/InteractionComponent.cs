@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using _Project.Runtime.Interfaces;
 using NaughtyAttributes;
@@ -7,7 +6,7 @@ using UnityEngine.Events;
 
 namespace _Project.Runtime.Scripts.Interaction
 {
-    public class Interaction : MonoBehaviour
+    public class InteractionComponent : MonoBehaviour
     {
         //Fields
         [SerializeField] private float _interactionRadius = 1f;

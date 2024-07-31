@@ -7,7 +7,6 @@ namespace _Project.Runtime.Scripts.SignalEmitters
 {
     public class Switch : SignalEmitter, IInteractable
     {
-        [Button]
         public void Interact(PlayerController player)
         {
             _isOn = !_isOn;

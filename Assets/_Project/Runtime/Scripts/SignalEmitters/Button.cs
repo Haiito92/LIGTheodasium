@@ -24,7 +24,6 @@ namespace _Project.Runtime.Scripts.SignalEmitters
             }
         }
 
-        [Button]
         public void Interact(PlayerController player)
         {
             PushButton();

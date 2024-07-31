@@ -74,7 +74,6 @@ namespace _Project.Runtime.Scripts.Interaction
             return closestInteractable != null;
         }
 
-        [Button] //Made a button for test
         public void DoInteraction(PlayerController player)
         {
             if(_closestInteractable == null) return;

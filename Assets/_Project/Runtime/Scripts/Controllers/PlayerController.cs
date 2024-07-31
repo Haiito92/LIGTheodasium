@@ -1,4 +1,5 @@
 using _Project.Runtime.Scripts.Interaction;
+using _Project.Runtime.Scripts.Inventory;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,6 +15,14 @@ namespace _Project.Runtime.Scripts.Controllers
         [Header("Components")]
         [SerializeField] private InteractionComponent _interactionComp;
 
+        [SerializeField] private InventoryComponent _inventoryComp;
+
+        #region Properties
+
+        public InventoryComponent InventoryComp => _inventoryComp;
+
+        #endregion
+        
         private void DoInteraction(InputAction.CallbackContext ctx)
         {
             Debug.Log("PlayerInteract");

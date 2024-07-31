@@ -24,6 +24,7 @@ namespace _Project.Runtime.Scripts.Items
         protected virtual void PickUp(PlayerController player)
         {
             OnItemPickUpEvent?.Invoke();
+            Destroy(gameObject);
         }
     }
 }

@@ -107,8 +107,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interact: {fileID: 8378027811995437804, guid: af1511a42bc01bb4a83698f72099aaee, type: 3}
+  _useBomb: {fileID: -8403050336905743387, guid: af1511a42bc01bb4a83698f72099aaee, type: 3}
   _interactionComp: {fileID: 6692542883961166573}
-  _inventoryComp: {fileID: 7362119283068817520}
+  _inventoryComp: {fileID: 5139222098373790797}
 --- !u!1 &850364505461967873
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,7 +271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3648430888466033220}
   - component: {fileID: 6692542883961166573}
-  - component: {fileID: 7362119283068817520}
+  - component: {fileID: 5139222098373790797}
   m_Layer: 0
   m_Name: Components
   m_TagString: Untagged
@@ -309,7 +310,7 @@ MonoBehaviour:
   OnInteractionDoneEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &7362119283068817520
+--- !u!114 &5139222098373790797
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -321,4 +322,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2b648ebdfa6e6469485f5f8e636c3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bombPrefab: {fileID: 0}
+  _bombPrefab: {fileID: 449086956516159555, guid: 26dfc4456c62d014794f1020d53524c4, type: 3}

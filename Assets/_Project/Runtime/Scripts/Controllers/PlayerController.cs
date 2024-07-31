@@ -1,9 +1,8 @@
-using System;
-using UnityEngine;
 using _Project.Runtime.Scripts.Interaction;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace _Project.Runtime.Scripts.PlayerController
+namespace _Project.Runtime.Scripts.Controllers
 {
     public class PlayerController : MonoBehaviour
     {
@@ -21,7 +20,7 @@ namespace _Project.Runtime.Scripts.PlayerController
             
             if (ctx.started)
             {
-                _interactionComp.DoInteraction();
+                _interactionComp.DoInteraction(this);
             }
         }
         

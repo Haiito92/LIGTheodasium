@@ -1,4 +1,5 @@
 using _Project.Runtime.Interfaces;
+using _Project.Runtime.Scripts.Controllers;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -24,7 +25,7 @@ namespace _Project.Runtime.Scripts.SignalEmitters
         }
 
         [Button]
-        public void Interact()
+        public void Interact(PlayerController player)
         {
             PushButton();
         }

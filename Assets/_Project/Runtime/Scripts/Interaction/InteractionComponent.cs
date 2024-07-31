@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using _Project.Runtime.Interfaces;
+using _Project.Runtime.Scripts.Controllers;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
@@ -74,13 +75,13 @@ namespace _Project.Runtime.Scripts.Interaction
         }
 
         [Button] //Made a button for test
-        public void DoInteraction()
+        public void DoInteraction(PlayerController player)
         {
             if(_closestInteractable == null) return;
             
             Debug.Log("Do interaction");
             
-            _closestInteractable.Interact();
+            _closestInteractable.Interact(player);
             
             OnInteractionDoneEvent?.Invoke();
         }

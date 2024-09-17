@@ -120,6 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5931480832165461826}
   - component: {fileID: 1926625208854786425}
+  - component: {fileID: 8771395818337332267}
   m_Layer: 0
   m_Name: Physics
   m_TagString: Untagged
@@ -177,6 +178,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &8771395818337332267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850364505461967873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d0f0ca1163e95d4aa425109d98c1dda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 3498848152736317675}
 --- !u!1 &929237375529039547
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,6 +286,7 @@ GameObject:
   - component: {fileID: 3648430888466033220}
   - component: {fileID: 6692542883961166573}
   - component: {fileID: 5139222098373790797}
+  - component: {fileID: 3498848152736317675}
   m_Layer: 0
   m_Name: Components
   m_TagString: Untagged
@@ -323,3 +338,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bombPrefab: {fileID: 449086956516159555, guid: 26dfc4456c62d014794f1020d53524c4, type: 3}
+--- !u!114 &3498848152736317675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2399713244497935807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a37f30c15e77024e9dfecddcec77004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 10
+  OnDamageTakenEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeathEvent:
+    m_PersistentCalls:
+      m_Calls: []

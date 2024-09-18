@@ -15,12 +15,14 @@ namespace _Project.Runtime.Scripts.Health
 
         public event UnityAction<int> OnCurrentHealthChanged;
         public event UnityAction OnDamageTaken;
+        public event UnityAction OnHealed;
         public event UnityAction OnDeath;
         
         //UnityEvents
         [Header("Events"), Space(5)]
         
         [SerializeField] private UnityEvent OnDamageTakenEvent;
+        [SerializeField] private UnityEvent OnHealedEvent;
         [SerializeField] private UnityEvent OnDeathEvent;
         
         //Properties
@@ -39,6 +41,8 @@ namespace _Project.Runtime.Scripts.Health
             }
 
         }
+
+        private bool IsAlive => _currentHealth > 0;
         #endregion
         
         private void Awake()
@@ -46,16 +50,19 @@ namespace _Project.Runtime.Scripts.Health
             CurrentHealth = MaxHealth;
             
             OnDamageTakenEvent.AddListener(() => OnDamageTaken?.Invoke());
+            OnHealedEvent.AddListener(() => OnHealed?.Invoke());
             OnDeathEvent.AddListener(() => OnDeath?.Invoke());
         }
 
         public void TakeDamage(int damage)
         {
-            if(damage <= 0) return;
+            if(damage <= 0 || !IsAlive) return;
 
             CurrentHealth -= damage;
 
             OnDamageTakenEvent?.Invoke();
+            
+            //Debug.Log("Took damage. Health left : " + CurrentHealth);
             
             if (CurrentHealth <= 0)
             {
@@ -63,9 +70,19 @@ namespace _Project.Runtime.Scripts.Health
             }
         }
 
+        public void Heal(int heal)
+        {
+            if(!IsAlive) return;
+
+            CurrentHealth += heal;
+            
+            OnHealedEvent?.Invoke();            
+        } 
+        
         private void Die()
         {
             OnDeathEvent?.Invoke();
+            //Debug.Log("Dead");
         }
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor.Rendering;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class Movement : MonoBehaviour
 
     //IS PLAYER VARIABLES
     [SerializeField] private InputActionReference _movementInput;
+    private bool _isMoving;
 
     //IS AI VARIABLES
     //patrol
@@ -23,6 +25,12 @@ public class Movement : MonoBehaviour
     [SerializeField] private float _speed;
 
     private Vector2 _direction;
+
+    #region PROPERTIES
+
+    public Vector2 Direction => _direction;
+
+    #endregion
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +56,10 @@ public class Movement : MonoBehaviour
 
     private void Walk()
     {
-        transform.position = (Vector2)transform.position + _direction * _speed * Time.fixedDeltaTime;
+        if(_isMoving)
+        {
+            transform.position = (Vector2)transform.position + _direction * _speed * Time.fixedDeltaTime;
+        }
     }
 
     private void SetWalkDirection(InputAction.CallbackContext ctx)
@@ -56,10 +67,11 @@ public class Movement : MonoBehaviour
         if(ctx.performed)
         {
             _direction = ctx.ReadValue<Vector2>();
+            _isMoving = true;
         }
         else if(ctx.canceled)
         {
-            _direction = Vector2.zero;
+            _isMoving= false;
         }
     }
 
@@ -90,18 +102,6 @@ public class Movement : MonoBehaviour
         {
             _movementInput.action.performed -= SetWalkDirection;
             _movementInput.action.canceled -= SetWalkDirection;
-        }
-    }
-
-    private void OnValidate()
-    {
-        if (_isPlayer)
-        {
-
-        }
-        else
-        {
-            //_waypoints.Serialize(this);
         }
     }
 }

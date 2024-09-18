@@ -1,4 +1,5 @@
 using _Project.Runtime.Interfaces;
+using _Project.Runtime.Scripts.Controllers;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,14 +16,15 @@ namespace _Project.Runtime.Scripts.Items
             OnItemPickUpEvent.AddListener(() => OnItemPickUp?.Invoke());
         }
 
-        public void Interact()
+        public void Interact(PlayerController player)
         {
-            PickUp();
+            PickUp(player);
         }
 
-        protected virtual void PickUp()
+        protected virtual void PickUp(PlayerController player)
         {
             OnItemPickUpEvent?.Invoke();
+            Destroy(gameObject);
         }
     }
 }

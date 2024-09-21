@@ -9,6 +9,7 @@ using UnityEngine.InputSystem;
 public class Movement : MonoBehaviour
 {
     [SerializeField] private bool _isPlayer;
+    [SerializeField] private Transform _movingTransform;
 
     //IS PLAYER VARIABLES
     [SerializeField] private InputActionReference _movementInput;
@@ -58,7 +59,7 @@ public class Movement : MonoBehaviour
     {
         if(_isMoving)
         {
-            transform.position = (Vector2)transform.position + _direction * _speed * Time.fixedDeltaTime;
+            _movingTransform.position = (Vector2)_movingTransform.position + _direction * _speed * Time.fixedDeltaTime;
         }
     }
 
@@ -77,10 +78,10 @@ public class Movement : MonoBehaviour
 
     private void Patrol()
     {
-        _direction = _target.position - transform.position;
-        transform.position = (Vector2)transform.position + _direction.normalized * _speed * Time.fixedDeltaTime;
+        _direction = _target.position - _movingTransform.position;
+        _movingTransform.position = (Vector2)_movingTransform.position + _direction.normalized * _speed * Time.fixedDeltaTime;
 
-        if(Vector2.Distance(transform.position, _target.position) < 0.3f)
+        if(Vector2.Distance(_movingTransform.position, _target.position) < 0.3f)
         {
             _destPoint = (_destPoint + 1) % _waypoints.Length;
             _target = _waypoints[_destPoint];

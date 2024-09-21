@@ -8,6 +8,7 @@ using UnityEngine;
 public class MovementEditor : Editor
 {
     SerializedProperty _isPlayerProperty;
+    SerializedProperty _movingTransformProperty;
     SerializedProperty _speedProperty;
     SerializedProperty _movementInputProperty;
     SerializedProperty _waypointsProperty;
@@ -15,6 +16,7 @@ public class MovementEditor : Editor
     private void OnEnable()
     {
         _isPlayerProperty = serializedObject.FindProperty("_isPlayer");
+        _movingTransformProperty = serializedObject.FindProperty("_movingTransform");
         _speedProperty = serializedObject.FindProperty("_speed");
         _movementInputProperty = serializedObject.FindProperty("_movementInput");
         _waypointsProperty = serializedObject.FindProperty("_waypoints");
@@ -25,6 +27,7 @@ public class MovementEditor : Editor
         serializedObject.Update();
 
         EditorGUILayout.PropertyField(_isPlayerProperty);
+        EditorGUILayout.PropertyField(_movingTransformProperty);
         EditorGUILayout.PropertyField(_speedProperty);
 
 

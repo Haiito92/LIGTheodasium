@@ -23,7 +23,7 @@ public class Movement : MonoBehaviour
 
 
     //USED IN BOTH VARIABLES
-    [SerializeField] private float _speed;
+    public float _speed;
 
     private Vector2 _direction;
 

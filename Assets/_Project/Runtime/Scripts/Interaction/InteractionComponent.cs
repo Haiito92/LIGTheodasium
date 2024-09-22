@@ -31,6 +31,10 @@ namespace _Project.Runtime.Scripts.Interaction
             {
                 _closestInteractable = closestInteractable;
             }
+            else
+            {
+                _closestInteractable = null;
+            }
         }
 
         private List<IInteractable> GetInRangeInteractables(Vector2 interactionPoint, float interactionRadius)

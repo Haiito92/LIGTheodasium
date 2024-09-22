@@ -62,6 +62,7 @@ namespace _Project.Runtime.Scripts.Items.Bomb
             {
                 if (col.TryGetComponent(out IHealth health))
                 {
+                    Debug.Log("DoDamage");
                     health.TakeDamage(_damage);
                 }
             }

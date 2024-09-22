@@ -60,7 +60,7 @@ namespace _Project.Runtime.Scripts.Traps
         private void DestroyTimber()
         {
             _isLifeTimerRunning = false;
-            Destroy(this);
+            Destroy(gameObject);
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -71,7 +71,7 @@ namespace _Project.Runtime.Scripts.Traps
                 
             }
             
-            DestroyTimber();
+            //DestroyTimber();
         }
     }
 }

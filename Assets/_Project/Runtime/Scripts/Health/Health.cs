@@ -62,7 +62,7 @@ namespace _Project.Runtime.Scripts.Health
 
             OnDamageTakenEvent?.Invoke();
             
-            //Debug.Log("Took damage. Health left : " + CurrentHealth);
+            Debug.Log("Took damage. Health left : " + CurrentHealth);
             
             if (CurrentHealth <= 0)
             {
@@ -84,5 +84,7 @@ namespace _Project.Runtime.Scripts.Health
             OnDeathEvent?.Invoke();
             //Debug.Log("Dead");
         }
+
+        public void DestroyHealthObject(GameObject inGameObject) => Destroy(inGameObject);
     }
 }

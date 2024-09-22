@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3866415922160615101}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,9 +122,10 @@ GameObject:
   - component: {fileID: 1926625208854786425}
   - component: {fileID: 8771395818337332267}
   - component: {fileID: 3365272302689242710}
+  - component: {fileID: 1570264319190193518}
   m_Layer: 0
   m_Name: Physics
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -205,6 +206,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _teleportation: {fileID: 8368631539035605159}
+--- !u!114 &1570264319190193518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850364505461967873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 247ab30b8da260240a1dc61e0ab1e8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attractable: {fileID: 7563200426717765769}
 --- !u!1 &929237375529039547
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,6 +317,8 @@ GameObject:
   - component: {fileID: 3498848152736317675}
   - component: {fileID: 1135785131712860859}
   - component: {fileID: 8368631539035605159}
+  - component: {fileID: 3171162850129240736}
+  - component: {fileID: 7563200426717765769}
   m_Layer: 0
   m_Name: Components
   m_TagString: Untagged
@@ -407,3 +423,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canTeleport: 1
   _teleportCooldown: 0.2
+  _teleportedTransform: {fileID: 6584901189248820983}
+--- !u!114 &3171162850129240736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2399713244497935807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b6088101ec67e14c9ed588b4f04a5a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isPlayer: 1
+  _isStatic: 0
+  _shootingDirections: []
+  _timeBetweenShoot: 1
+  _shootInput: {fileID: 441762724596511883, guid: af1511a42bc01bb4a83698f72099aaee, type: 3}
+  _projectilePrefab: {fileID: 5953672300292654589, guid: 1cc90023ef8f03146983d921b5407b2e, type: 3}
+  _spawnOffset: 0.5
+--- !u!114 &7563200426717765769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2399713244497935807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f7e8bad7b969644ab2d615be3d73f7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attractedRB: {fileID: 7731324380468627364}

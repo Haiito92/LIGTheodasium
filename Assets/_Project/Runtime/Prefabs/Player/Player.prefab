@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 5931480832165461826}
   - component: {fileID: 1926625208854786425}
   - component: {fileID: 8771395818337332267}
+  - component: {fileID: 3365272302689242710}
   m_Layer: 0
   m_Name: Physics
   m_TagString: Untagged
@@ -191,6 +192,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: {fileID: 3498848152736317675}
+--- !u!114 &3365272302689242710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850364505461967873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb4d1a347aaa5c34db459bc4dc7aa1f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _teleportation: {fileID: 8368631539035605159}
 --- !u!1 &929237375529039547
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,6 +301,8 @@ GameObject:
   - component: {fileID: 6692542883961166573}
   - component: {fileID: 5139222098373790797}
   - component: {fileID: 3498848152736317675}
+  - component: {fileID: 1135785131712860859}
+  - component: {fileID: 8368631539035605159}
   m_Layer: 0
   m_Name: Components
   m_TagString: Untagged
@@ -360,3 +376,34 @@ MonoBehaviour:
   OnDeathEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1135785131712860859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2399713244497935807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 476d7c68ef3233d4c96770f7b87c6228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isPlayer: 1
+  _movingTransform: {fileID: 6584901189248820983}
+  _movementInput: {fileID: -6750459389794997526, guid: af1511a42bc01bb4a83698f72099aaee, type: 3}
+  _waypoints: []
+  _speed: 3
+--- !u!114 &8368631539035605159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2399713244497935807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c09f9defe2ead634589e8605a63fc814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _canTeleport: 1
+  _teleportCooldown: 0.2

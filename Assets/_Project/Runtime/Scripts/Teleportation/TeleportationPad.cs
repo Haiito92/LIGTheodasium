@@ -8,7 +8,7 @@ public class TeleportationPad : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out Teleportation teleportationComponent))
+        if (collision.TryGetComponent(out ITeleportation teleportationComponent))
         {
             if (teleportationComponent.CanTeleport)
             {

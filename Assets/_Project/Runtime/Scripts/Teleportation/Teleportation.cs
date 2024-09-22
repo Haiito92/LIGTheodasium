@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Teleportation : MonoBehaviour
+public class Teleportation : MonoBehaviour, ITeleportation
 {
     [SerializeField] private bool _canTeleport = true;
     [SerializeField] private float _teleportCooldown = 0.2f;

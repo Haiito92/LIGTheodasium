@@ -9,6 +9,7 @@ public class MovementEditor : Editor
 {
     SerializedProperty _isPlayerProperty;
     SerializedProperty _movingTransformProperty;
+    SerializedProperty _movingAnimatorProperty;
     SerializedProperty _speedProperty;
     SerializedProperty _movementInputProperty;
     SerializedProperty _waypointsProperty;
@@ -17,6 +18,7 @@ public class MovementEditor : Editor
     {
         _isPlayerProperty = serializedObject.FindProperty("_isPlayer");
         _movingTransformProperty = serializedObject.FindProperty("_movingTransform");
+        _movingAnimatorProperty = serializedObject.FindProperty("_movingAnimator");
         _speedProperty = serializedObject.FindProperty("_speed");
         _movementInputProperty = serializedObject.FindProperty("_movementInput");
         _waypointsProperty = serializedObject.FindProperty("_waypoints");
@@ -28,6 +30,7 @@ public class MovementEditor : Editor
 
         EditorGUILayout.PropertyField(_isPlayerProperty);
         EditorGUILayout.PropertyField(_movingTransformProperty);
+        EditorGUILayout.PropertyField(_movingAnimatorProperty);
         EditorGUILayout.PropertyField(_speedProperty);
 
 

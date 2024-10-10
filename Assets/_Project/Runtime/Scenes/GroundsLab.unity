@@ -357,6 +357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canTeleport: 1
   _teleportCooldown: 0.2
+  _teleportedTransform: {fileID: 0}
 --- !u!114 &1067100064
 MonoBehaviour:
   m_ObjectHideFlags: 0

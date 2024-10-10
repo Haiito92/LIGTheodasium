@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] private bool _isPlayer;
     [SerializeField] private Transform _movingTransform;
+    [SerializeField] private Animator _movingAnimator;
 
     //IS PLAYER VARIABLES
     [SerializeField] private InputActionReference _movementInput;
@@ -30,6 +31,8 @@ public class Movement : MonoBehaviour
     #region PROPERTIES
 
     public Vector2 Direction => _direction;
+
+    public Animator Animator => _movingAnimator;
 
     #endregion
 
@@ -60,7 +63,7 @@ public class Movement : MonoBehaviour
         if(_isMoving)
         {
             _movingTransform.position = (Vector2)_movingTransform.position + _direction * _speed * Time.fixedDeltaTime;
-        }
+        }  
     }
 
     private void SetWalkDirection(InputAction.CallbackContext ctx)
@@ -69,10 +72,17 @@ public class Movement : MonoBehaviour
         {
             _direction = ctx.ReadValue<Vector2>();
             _isMoving = true;
+
+            _movingAnimator.Play("Walk");
+            _movingAnimator.SetFloat("moveX", _direction.x);
+            _movingAnimator.SetFloat("moveY", _direction.y);
         }
         else if(ctx.canceled)
         {
             _isMoving= false;
+            _movingAnimator.Play("idle");
+            _movingAnimator.SetFloat("moveX", 0);
+            _movingAnimator.SetFloat("moveY", 0);
         }
     }
 

@@ -47,6 +47,10 @@ public class Shoot : MonoBehaviour
 
     private void InstanciateProjectile(InputAction.CallbackContext ctx)
     {
+        _movementComponent.Animator.Play("Attack");
+        _movementComponent.Animator.SetFloat("moveX", _movementComponent.Direction.x);
+        _movementComponent.Animator.SetFloat("moveY", _movementComponent.Direction.y);
+
         GameObject instantiatedProjectile = Instantiate(_projectilePrefab, (Vector2)transform.position + _movementComponent.Direction * _spawnOffset, Quaternion.identity);
         
         instantiatedProjectile.GetComponent<ProjectileMovement>().Direction = _movementComponent.Direction;

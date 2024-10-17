@@ -68,9 +68,14 @@ namespace _Project.Runtime.Scripts.Items.Bomb
             }
             
             OnExplosionEvent?.Invoke();
-            Destroy(gameObject);
+            
         }
 
+        public void DestroyBomb()
+        {
+            Destroy(gameObject);
+        }
+        
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.red;

@@ -11,6 +11,10 @@ namespace _Project.Runtime.Scripts.SignalEmitters
         private float _releaseTimer;
         private float _elapsedTime;
 
+        [SerializeField] private Animator _animator;
+        [SerializeField] private string _pressedAnimName;
+        [SerializeField] private string _releasedAnimName;
+        
         private void Update()
         {
             if (_isOn)
@@ -37,7 +41,8 @@ namespace _Project.Runtime.Scripts.SignalEmitters
             
             EmitSignal(_isOn);
             
-            Debug.Log("Push Button");
+            _animator.Play(_pressedAnimName);
+            //Debug.Log("Push Button");
         }
 
         private void ReleaseButton()
@@ -46,7 +51,8 @@ namespace _Project.Runtime.Scripts.SignalEmitters
             
             EmitSignal(_isOn);
             
-            Debug.Log("Release Button");
+            _animator.Play(_releasedAnimName);
+            //Debug.Log("Release Button");
         }
     }
 }

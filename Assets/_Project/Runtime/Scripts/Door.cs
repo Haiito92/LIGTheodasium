@@ -10,12 +10,12 @@ namespace _Project.Runtime.Scripts
         [SerializeField] private List<SignalEmitter> SignalEmitters;
 
         //Field for testing, meant to be removed after;
-        [SerializeField] private SpriteRenderer _sp;
+        [SerializeField] private Animator _animator;
+        [SerializeField] private string _closeAnimName;
+        [SerializeField] private string _openAnimName;
         
         private void OnEnable()
         {
-            _sp.color = Color.red; //For testing purposes only, should be removed after
-            
             foreach (SignalEmitter emitter in SignalEmitters)
             {
                 emitter.OnStateChanged += ReceiveSignal;
@@ -36,14 +36,12 @@ namespace _Project.Runtime.Scripts
         
         private void Open()
         {
-            Debug.Log("OpenDoor");
-            _sp.color = Color.green;//For testing purposes only, should be removed after
+            _animator.Play(_openAnimName);
         }
 
         private void Close()
         {
-            Debug.Log("CloseDoor");
-            _sp.color = Color.red;//For testing purposes only, should be removed after
+            _animator.Play(_closeAnimName);
         }
 
         private void OnDisable()

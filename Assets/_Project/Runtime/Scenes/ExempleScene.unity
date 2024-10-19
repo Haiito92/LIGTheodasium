@@ -3779,6 +3779,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1546036244}
     m_Modifications:
+    - target: {fileID: 1879370650410573332, guid: 708cd37f535b98f4eb3861a40eda8f06, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 7dd9e05f136ccdf419f6170efd97267b, type: 2}
     - target: {fileID: 3005194580141627886, guid: 708cd37f535b98f4eb3861a40eda8f06, type: 3}
       propertyPath: m_Name
       value: EnemyPatrol
@@ -3822,6 +3826,22 @@ PrefabInstance:
     - target: {fileID: 3645134001176940735, guid: 708cd37f535b98f4eb3861a40eda8f06, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051843957709749885, guid: 708cd37f535b98f4eb3861a40eda8f06, type: 3}
+      propertyPath: m_Size.x
+      value: 0.99784875
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051843957709749885, guid: 708cd37f535b98f4eb3861a40eda8f06, type: 3}
+      propertyPath: m_Size.y
+      value: 0.81918764
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051843957709749885, guid: 708cd37f535b98f4eb3861a40eda8f06, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.01407969
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051843957709749885, guid: 708cd37f535b98f4eb3861a40eda8f06, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.06347823
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

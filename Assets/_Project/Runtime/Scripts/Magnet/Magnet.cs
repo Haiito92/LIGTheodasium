@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,8 @@ public class Magnet : MonoBehaviour
     private bool _isAttractingPlayer;
     private Vector2 _playerAttractionDirection;
 
+    [SerializeField] private CircleCollider2D _collider2D;
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.TryGetComponent(out IAttractable attractable) && collision.CompareTag("Player"))
@@ -44,4 +47,11 @@ public class Magnet : MonoBehaviour
         }
     }
 
+    private void OnDrawGizmos()
+    {
+        if (_collider2D != null)
+        {
+            Gizmos.DrawWireSphere(transform.position, _collider2D.radius);
+        }
+    }
 }
